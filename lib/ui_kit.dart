@@ -16,3 +16,4 @@ export 'src/widgets/default_text_field.dart';
 export 'src/widgets/default_drop_down_menu.dart';
 export 'src/widgets/default_switch.dart';
 export 'src/widgets/default_pagination.dart';
+export 'src/widgets/default_snackbar.dart';

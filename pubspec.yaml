@@ -16,6 +16,7 @@ dependencies:
   infinite_scroll_pagination: ^4.0.0
   pull_to_refresh_flutter3: ^2.0.2
   flutter_spinkit: ^5.2.1
+  elegant_notification: ^2.3.0
 
 dev_dependencies:
   flutter_test:
