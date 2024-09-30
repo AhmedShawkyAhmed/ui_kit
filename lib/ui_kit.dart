@@ -17,3 +17,6 @@ export 'src/widgets/default_drop_down_menu.dart';
 export 'src/widgets/default_switch.dart';
 export 'src/widgets/default_pagination.dart';
 export 'src/widgets/default_snackbar.dart';
+export 'src/widgets/default_icon_button.dart';
+export 'src/widgets/default_alert_dialog.dart';
+export 'src/widgets/default_app_bar.dart';

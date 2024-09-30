@@ -2,19 +2,33 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class LoadingView extends StatelessWidget {
-  const LoadingView({
-    super.key,
+  final Color iconColor;
+  final int? duration;
+
+  const LoadingView._internal({
     required this.iconColor,
+    this.duration,
   });
 
-  final Color iconColor;
+  static LoadingView? _instance;
+
+  factory LoadingView({
+    required Color iconColor,
+    int? duration,
+  }) {
+    _instance ??= LoadingView._internal(
+      iconColor: iconColor,
+      duration: duration,
+    );
+    return _instance!;
+  }
 
   @override
   Widget build(BuildContext context) {
     return SpinKitFadingCircle(
       color: iconColor,
-      duration: const Duration(
-        milliseconds: 800,
+      duration: Duration(
+        milliseconds: duration ?? 800,
       ),
     );
   }

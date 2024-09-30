@@ -4,9 +4,12 @@ import 'package:elegant_notification/resources/stacked_options.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:navigation_service/navigation_service.dart';
 import 'package:ui_kit/src/styles/core_colors.dart';
 
 class DefaultSnackbar {
+  DefaultSnackbar._();
+
   static const double _defaultWidth = 400;
   static const TextStyle _titleStyle = TextStyle(
     fontSize: 16,
@@ -33,8 +36,7 @@ class DefaultSnackbar {
   static const Alignment _position = Alignment.bottomCenter;
 
   static void showError(
-    String? body,
-    BuildContext context, {
+    String? body, {
     String? title,
     int? statusCode,
     Widget? actionWidget,
@@ -70,12 +72,11 @@ class DefaultSnackbar {
         color: CoreColors.red,
         size: 24,
       ),
-    ).show(context);
+    ).show(NavigationService.context);
   }
 
   static void showWarning(
-    String? body,
-    BuildContext context, {
+    String? body, {
     int? statusCode,
     Widget? action,
     String? title,
@@ -111,12 +112,11 @@ class DefaultSnackbar {
       progressIndicatorColor: CoreColors.lightOrange,
       animation: _animationType,
       position: _position,
-    ).show(context);
+    ).show(NavigationService.context);
   }
 
   static void showInfo(
-    String? body,
-    BuildContext context, {
+    String? body, {
     int? statusCode,
     Widget? action,
     String? title,
@@ -146,12 +146,11 @@ class DefaultSnackbar {
       toastDuration: duration,
       animation: _animationType,
       position: _position,
-    ).show(context);
+    ).show(NavigationService.context);
   }
 
   static void showSuccess(
-    String? body,
-    BuildContext context, {
+    String? body, {
     Widget? action,
     String? title,
     dynamic Function()? onActionPressed,
@@ -180,7 +179,7 @@ class DefaultSnackbar {
       toastDuration: duration,
       animation: _animationType,
       position: _position,
-    ).show(context);
+    ).show(NavigationService.context);
   }
 
   static Widget _titleBuilder({
@@ -218,7 +217,6 @@ class DefaultSnackbar {
     );
   }
 
-  ///Get suitable duration based on text length
   static Duration getDurationFromLength(String? text) {
     text ??= '';
     if (text.length < 50) return const Duration(seconds: 3);
